@@ -1,0 +1,147 @@
+.whitebutton {
+    margin: 20px auto;
+    padding: 20px 0;
+    width: 200px;
+}
+
+.whitebutton a {
+    background: #fff;
+    color: #666;
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Arial',Verdana,sans-serif;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.whitebutton a:before {
+    content: '\f019';
+    font-family: FontAwesome;
+    font-weight: normal;
+    padding: 5px;
+    margin-left: -12px;
+    margin-right: 6px;
+}
+
+.whitebutton span {
+    background: #100;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-family: 'Arial', Verdana,sans-serif;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 200px;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.whitebutton .up {
+    background: #e25734;
+    margin: -25px auto;
+    opacity: 0;
+    border-radius: 0 0 5px 5px;
+    transform: translate(0,-50px);
+    transition: 350ms;
+}
+
+.whitebutton .down {
+    margin: -30px auto;
+    opacity: 0;
+    border-radius: 5px 5px 0 0;
+    transform: translate(0,-50px);
+    transition: 350ms;
+}
+
+.whitebutton .down:before {
+    content:'\f14a';
+    font-family: FontAwesome;
+    font-weight: normal;
+    margin-right: 6px;
+    color: #aaa;
+}
+
+.whitebutton:hover .up {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.whitebutton:hover .down {
+    opacity: 1;
+    transform: translate(0,-90px);
+}
+
+.whitebuttondemo {
+    margin: 20px auto;
+    padding: 20px 0;
+    width: 200px;
+}
+
+.whitebuttondemo a {
+    background: #e25734;
+    color: #fff;
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    font-family:'Arial',Verdana,sans-serif;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    position: relative;
+    z-index: 2;
+    transition: 350ms;
+}
+
+.whitebuttondemo a:before {
+    content:'\f004';
+    font-family: FontAwesome;
+    font-weight: normal;
+    padding: 8px;
+    margin-left: -12px;
+    margin-right: 6px;
+}
+
+.whitebuttondemo a:hover {
+    color: #fff;
+}
+
+.whitebuttondemo span {
+    background: #444;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-family: 'Arial', Verdana,sans-serif;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 200px;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.whitebuttondemo .up {
+    background: #444;
+    margin: -25px auto;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    transform: translate(0,-50px);
+    transition: 350ms;
+}
+
+.whitebuttondemo:hover .up {
+    opacity: 1;
+    transform: translate(0,0);
+}

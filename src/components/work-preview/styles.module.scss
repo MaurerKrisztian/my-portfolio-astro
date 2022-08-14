@@ -1,0 +1,66 @@
+.card {
+	padding: 11px;
+	margin: 11px;
+}
+
+
+.tags {
+	background-color: rgb(32, 30, 30);
+	font-size: var(--f-d2);
+	text-transform: uppercase;
+	border-radius: 25px;
+	padding: 3px;
+}
+
+.tag {
+	display: inline-block;
+	color: var(--c-yellow);
+	text-transform: uppercase;
+	margin-left: 0.5em;
+
+	&:nth-of-type(1n) {
+		color: var(--c-green);
+	}
+	&:nth-of-type(2n) {
+		color: var(--c-orange);
+	}
+	&:nth-of-type(3n) {
+		color: var(--c-blue);
+	}
+	&:nth-of-type(4n) {
+		color: var(--c-pink);
+	}
+}
+
+
+.gradient-background {
+	// height: 600px;
+	padding: 11px;
+	margin: 11px;
+	 background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	   animation: gradient 15s ease infinite; 
+		background-size: 400% 400%;
+	
+  }
+  @-webkit-keyframes gradient{
+	0% {
+	  background-position: 0 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	   background-position: 0% 50%;
+	}
+  }
+  @keyframes gradient{
+	0% {
+	  background-position: 0 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	   background-position: 0% 50%;
+	}
+  }

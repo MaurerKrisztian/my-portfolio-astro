@@ -1,0 +1,146 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import WorkPreview from '../components/work-preview/index.jsx';
+import Button from '../components/Button/index.jsx';
+const metrixProjects = (await Astro.glob('../content/works/metrix/**/*.md'))
+	.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort(
+		(a, b) =>
+			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+	);
+
+    const exitgameProjects = (await Astro.glob('../content/works/exitgame/**/*.md'))
+	.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort(
+		(a, b) =>
+			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+	);
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="All Projects | Jeanine White"
+			description="Learn about Jeanine White's most recent projects"
+		/>
+		<style lang="scss">
+			.grid {
+				display: grid;
+				grid-gap: 3rem;
+			}
+
+            :root {
+  --min-width: 300px;
+  --space-between: 5rem;
+}
+
+.container {
+  display: grid;
+  grid-gap: var(--space-between);
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr));
+}
+
+.element {
+  display: grid;
+  place-items: center;
+  background: rgb(204, 202, 202);
+  border-radius: 25px;
+//   height: 200px
+} 
+
+
+
+.gradient-background {
+	// height: 600px;
+	padding: 11px;
+	margin: 11px;
+	 background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	   animation: gradient 15s ease infinite; 
+		background-size: 400% 400%;
+	
+  }
+  @-webkit-keyframes gradient{
+	0% {
+	  background-position: 0 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	   background-position: 0% 50%;
+	}
+  }
+  @keyframes gradient{
+	0% {
+	  background-position: 0 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	   background-position: 0% 50%;
+	}
+  }
+
+  #project-videos {
+	display: none;
+	padding: 11px;
+	margin: 11px;
+}
+
+  #showVideoBtn {
+	cursor: pointer;
+
+  }
+		</style>
+	</head>
+	<body>
+		<!-- <Nav /> -->
+		<div class="wrapper">
+			<h1 class="title mt4 mb4">My work</h1>
+
+            <h2>Metrix Hungary Kft.</h2>
+            <p><i>Fullstack</i> • July 2020 - Present</p>
+            <p class="description">My first programmer job. I learned a lot. Mostly I created APIs in Nodejs (express, ts, nestjs) with mongodb database. Also worked in some angular projects, 3D stuffs (WebGL, ThreeJs), CMS, chrome extension...</p>
+			<div class="container">
+				{metrixProjects.map((project) => <div class="element gradient-background"><WorkPreview project={project} /></div>)}
+			</div>
+
+
+            <hr>
+           <h2>ExitGame Kft.</h2>
+           <p><i>IoT development</i> • 2020</p>
+           <p class="description">I created some project for the local escaping room. It was really fun. I created arduino and raspberry pi projects, exemple: when the apple is in the correct position the door is unlocked.</p>
+
+		   <span id="showVideoBtn"><Button>Show video</Button></span>
+		   <a href="https://github.com/MaurerKrisztian/NFC_Servo" target="_blank"><Button>Code</Button></a>
+		   <!-- <button id="showVideoBtn"> show video </button> -->
+		   <div id="project-videos">
+
+			<video width="400" poster="https://malnapc.cdn.shoprenter.hu/custom/malnapc/image/cache/w1200h628q100/-template-malnapc-/category-offer/arduino_v3.png?lastmod=0.1629654137" controls>
+				<source src="assets/video/magnet-arduino.mp4" type="video/mp4">
+				Your browser does not support HTML video.
+			  </video>
+			  <video width="400" poster="https://malnapc.cdn.shoprenter.hu/custom/malnapc/image/cache/w1200h628q100/-template-malnapc-/category-offer/arduino_v3.png?lastmod=0.1629654137" controls>
+				<source src="assets/video/servo-card-arduino.mp4" type="video/mp4">
+				<source src="mov_bbb.ogg" type="video/ogg">
+				Your browser does not support HTML video.
+			  </video>		
+		   </div>
+		   <div class="container">
+				{exitgameProjects.map((project) => <div class="element gradient-background"><WorkPreview project={project} /></div>)}
+			</div>
+		</div>
+		<!-- <Footer /> -->
+		<script>
+			const showBtn = document.getElementById("showVideoBtn");
+			showBtn.addEventListener('click', ()=> {
+				document.getElementById("project-videos").style.display = "block"
+			})
+		</script>
+	</body>
+</html>
+

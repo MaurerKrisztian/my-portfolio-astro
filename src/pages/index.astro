@@ -1,0 +1,306 @@
+---
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Button from '../components/Button/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import Footer from '../components/Footer/index.jsx';
+import DownloadBtn from '../components/download-btn/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import Works from './works.astro';
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob('./project/**/*.md');
+const featuredProject = projects[0];
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Jeanine White: Personal Site"
+			description="Jeanine White: Developer, Speaker, and Writer..."
+		/>
+		<style lang="scss">
+			$w-s: 750px;
+
+
+			.statImage {
+				height: 222px;
+				width: 600px;
+			}
+
+			.hero {
+				position: relative;
+				overflow: hidden;
+
+				@media (min-width: $w-s) {
+					height: 45vw;
+				}
+			}
+
+			.img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+
+			.gradient,
+			.gradient2 {
+				background-image: url('/assets/mesh-gradient.jpg');
+				background-size: cover;
+				pointer-events: none;
+				mix-blend-mode: screen;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
+			.gradient2 {
+				mix-blend-mode: multiply;
+				background-size: cover;
+			}
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				padding-left: 2rem;
+
+				@media (min-width: $w-s) {
+					padding-left: 4rem;
+				}
+			}
+
+			.title {
+				font-weight: 900;
+				font-size: var(--f-u8);
+				margin-bottom: 0.5rem;
+				margin-top: 0;
+
+				@media (min-width: $w-s) {
+					font-size: var(--f-u12);
+				}
+			}
+
+			.grid {
+				display: grid;
+				grid-gap: 2rem;
+
+				@media (min-width: 1200px) {
+					grid-template-columns: 2fr 1fr;
+				}
+			}
+
+			.sectionTitle {
+				font-weight: 700;
+				font-size: var(--f-u8);
+				margin-top: 4rem;
+				margin-bottom: 2rem;
+			}
+
+			.role {
+				position: relative;
+				display: inline-block;
+				font-weight: 900;
+				color: var(--t-bg);
+				background-color: var(--t-fg);
+				padding: 0.25em 0.5em;
+				z-index: 2;
+
+				@media (min-width: $w-s) {
+					font-size: var(--f-u3);
+				}
+
+				+ .role {
+					margin-left: 1em;
+				}
+
+				&:nth-of-type(1) {
+					.invert {
+						background-color: var(--c-pink);
+					}
+				}
+
+				&:nth-of-type(2) {
+					.invert {
+						background-color: var(--c-blue);
+					}
+				}
+
+				&:nth-of-type(3) {
+					.invert {
+						background-color: var(--c-green);
+					}
+				}
+
+				&:hover {
+					.invert {
+						clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+					}
+				}
+			}
+
+			.invert {
+				position: absolute;
+				color: var(--t-fg);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+			}
+
+			.desc {
+				font-size: var(--f-u2);
+				margin-top: 1.5rem;
+				margin-bottom: 0;
+			}
+
+			.subtitle {
+				display: block;
+				font-weight: 400;
+				font-size: var(--f-d6);
+				letter-spacing: -0.0625em;
+			}
+
+			.bio {
+				line-height: 2;
+				margin-bottom: 2rem;
+
+				> span:first-of-type {
+					line-height: 1;
+					margin-bottom: 0.5em;
+					display: block;
+					font-weight: 700;
+					font-size: var(--f-u4);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<header class="hero">
+			<img
+				width="1600"
+				height="1131"
+				class="img"
+				src="/assets/space.gif"
+				srcset="/assets/space.gif 800w,/assets/space.gif 1200w,/assets/space.gif 1600w,/assets/space.gif 2400w"
+				sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+			/>
+			<div class="gradient"></div>
+			<div class="gradient2"></div>
+			<div class="overlay">
+				<h1 class="title">
+					<small class="subtitle">The personal site of</small>Maurer Krisztián
+				</h1>
+				<div>
+					<a href="https://github.com/MaurerKrisztian" target="_blank"><span class="role">👩‍💻 Fullstack Developer <span class="invert">👩‍💻 Fullstack Developer</span></span>&nbsp;</a>
+					<a href="https://dev.to/maurerkrisztian" target="_blank"><span class="role">✏️ Writer <span class="invert">✏️ Writer</span></span></a>
+				</div>
+				<p class="desc">I'm a full stack web developer with some IoT, devops skills, & freelancer.</p>
+			</div>
+		</header>
+		<main class="wrapper mt4 mb4">
+			<div class="grid">
+				<div class="section">
+					<h3 class="sectionTitle">About me</h3>
+					<p class="bio">
+						<span>Hello! 👋</span>I'm Maurer Krisztián Programming it's a hobby for me I don't see just as a job. I'm fast learner and could learn autodidactically with good problem solving skills.
+					</p>
+
+					<DownloadBtn></DownloadBtn>
+
+					<!-- <p>
+						<a href="/about">Read more</a>
+					</p> -->
+				</div>
+				<div class="section">
+					<h3 class="sectionTitle">Contact Details</h3>
+					<p class="bio">
+
+						<p>🌎 Hungary</p>
+						<p>&#128222; +36305170406</p>
+						<p>📧 maurerkrisztian@gmail.com</p>
+					</p>
+				</div>
+				
+
+		</div>
+		<Works client:visible/>
+
+		<div class="section">
+			<h3 class="sectionTitle">Personal Projects</h3>
+			<PortfolioPreview project={featuredProject} />
+			<div class="tac mt4">
+				<a href="/projects">
+					<Button>View All</Button>
+				</a>
+			</div>
+		</div>
+
+		<div class="grid">
+		<div class="section">
+			<h3 class="sectionTitle">Github stuffs</h3>
+			<p>This is just the sideprojects.</p>
+			<img class="statImage" src="https://github-readme-stats.vercel.app/api/top-langs?username=maurerkrisztian&show_icons=true&locale=en&layout=compact" alt="maurerkrisztian" />
+			
+			<img class="statImage" src="https://github-readme-stats.vercel.app/api?username=maurerkrisztian&show_icons=true&locale=en" alt="maurerkrisztian" />
+			
+			<img class="statImage" src="https://github-readme-streak-stats.herokuapp.com/?user=maurerkrisztian&" alt="maurerkrisztian" />
+	
+		</div>
+
+		<div class="section">
+			<h3 class="sectionTitle">Languages and tools</h3>
+
+			<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="">
+
+			<h3>Backend:</h3>
+
+			<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white" alt="">
+
+			<h3>Frontend:</h3>
+			<p> - Mainly: <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt=""></p>
+			<img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D" alt="">
+
+			<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="">
+			<img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white" alt="">
+
+			<h3>IDE:</h3>
+			<img src="https://img.shields.io/badge/WebStorm-000000?style=for-the-badge&logo=WebStorm&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="">
+
+			<h3>Communication:</h3>
+			<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="">
+			<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="">
+		</div></div>
+
+
+		</main>
+		<Footer />
+	</body>
+</html>
