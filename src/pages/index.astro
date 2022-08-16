@@ -1,5 +1,4 @@
 ---
-// Component Imports
 import MainHead from '../components/MainHead.astro';
 import Button from '../components/Button/index.jsx';
 import Nav from '../components/Nav/index.jsx';
@@ -8,11 +7,8 @@ import DownloadBtn from '../components/download-btn/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 import Works from './works.astro';
 // Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob('./project/**/*.md');
-const featuredProject = projects[0];
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const featuredProjects = await Astro.glob('./project/featured/**/*.md');
 ---
 
 <html lang="en">
@@ -243,17 +239,7 @@ const featuredProject = projects[0];
 				
 
 		</div>
-		<Works client:visible/>
-
-		<div class="section">
-			<h3 class="sectionTitle">Personal Projects</h3>
-			<PortfolioPreview project={featuredProject} />
-			<div class="tac mt4">
-				<a href="/projects">
-					<Button>View All</Button>
-				</a>
-			</div>
-		</div>
+		<Works/>
 
 		<div class="grid">
 		<div class="section">
@@ -298,7 +284,15 @@ const featuredProject = projects[0];
 			<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="">
 			<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="">
 		</div></div>
-
+		<div class="section">
+			<h3 class="sectionTitle">Personal Projects</h3>
+			{featuredProjects.map((project) => <div style="margin: 12px"> <PortfolioPreview project={project} /></div>)}
+			<div class="tac mt4">
+				<a href="/projects">
+					<Button>View All</Button>
+				</a>
+			</div>
+		</div>
 
 		</main>
 		<Footer />

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/project.astro
+layout: ../../../layouts/project.astro
 title: Canvas shapes background
 client: Self
 publishDate: 2020-03-02 00:00:00

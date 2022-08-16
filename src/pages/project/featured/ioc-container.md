@@ -1,14 +1,14 @@
 ---
-layout: ../../layouts/project.astro
+layout: ../../../layouts/project.astro
 title: Dependency injection container (IoC)
 client: Self
 publishDate: 2020-03-02 00:00:00
 img: /assets/project/ioc-container.jpg
 description: Dependency injection container (IoC)
 tags:
-- HTML Canvas
-- UI
-- Animation
+- TypeScript
+- TypeScript Decorators
+- Dependency injection
 ---
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
 
