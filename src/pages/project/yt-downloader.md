@@ -4,7 +4,7 @@ title: Youtube downloader (cli wrapper)
 client: Self
 publishDate: 2020-03-02 00:00:00
 img: /assets/project/yt-downloader-cover.png
-description: The goal of this project is to make a cool background with randomized shapes and to be customizable.
+description: Youtube downloader (cli wrapper)
 tags:
 - HTML Canvas
 - UI

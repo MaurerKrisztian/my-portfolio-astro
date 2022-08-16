@@ -5,6 +5,7 @@ import Nav from '../components/Nav/index.jsx';
 import Footer from '../components/Footer/index.jsx';
 import DownloadBtn from '../components/download-btn/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import Icons from '../components/Icons/index.jsx';
 import Works from './works.astro';
 // Data Fetching: List all Markdown posts in the repo.
 
@@ -210,7 +211,9 @@ const featuredProjects = await Astro.glob('./project/featured/**/*.md');
 					<a href="https://github.com/MaurerKrisztian" target="_blank"><span class="role">👩‍💻 Fullstack Developer <span class="invert">👩‍💻 Fullstack Developer</span></span>&nbsp;</a>
 					<a href="https://dev.to/maurerkrisztian" target="_blank"><span class="role">✏️ Writer <span class="invert">✏️ Writer</span></span></a>
 				</div>
-				<p class="desc">I'm a full stack web developer with some IoT, devops skills, & freelancer.</p>
+				<p class="desc">I'm a full stack developer & freelancer.</p>
+
+				<Icons></Icons>
 			</div>
 		</header>
 		<main class="wrapper mt4 mb4">
