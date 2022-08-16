@@ -30,6 +30,7 @@ const featuredProjects = await Astro.glob('./project/featured/**/*.md');
 			.hero {
 				position: relative;
 				overflow: hidden;
+				min-height: 400px;
 
 				@media (min-width: $w-s) {
 					height: 45vw;
