@@ -3,7 +3,7 @@ layout: ../../layouts/project.astro
 title: Youtube downloader (cli wrapper)
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/yt-downloader-cover.png
+img: /assets/project/Maurer_Krisztián_yt-downloader-cover.png
 description: Youtube downloader (cli wrapper)
 tags:
 - HTML Canvas
@@ -11,7 +11,7 @@ tags:
 - Animation
 ---
 
-![Youtube downloader demo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g49qupi8c5g5f5uv5t4q.gif)
+![Youtube downloader demo Maurer Krisztián](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g49qupi8c5g5f5uv5t4q.gif)
 
 You have probably already come across a YouTube video download site, in this article I will show you how to write such a site and go through the concepts and solutions I used.
 

@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title: Info center
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/infocenter.png
+img: /assets/project/Maurer_Krisztián_infocenter.png
 description: |
   A central project information system. (show versions, links, warnings...)
 tags:

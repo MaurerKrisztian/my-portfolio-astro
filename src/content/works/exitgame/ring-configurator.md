@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title:   IoT Arduino.
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/geom.png
+img: /assets/project/Maurer_Krisztián_geom.png
 description: |
  
 tags:

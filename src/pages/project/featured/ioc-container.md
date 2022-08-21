@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title: Dependency injection container (IoC)
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/ioc-container.jpg
+img: /assets/project/Maurer_Krisztián_ioc-container.jpg
 description: Dependency injection container (IoC)
 tags:
 - TypeScript

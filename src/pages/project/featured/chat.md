@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title: Chat app
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/chat.png
+img: /assets/project/Maurer_Krisztián_chat.png
 description: Chat app
 tags:
 - HTML Canvas

@@ -21,7 +21,7 @@ Code: https://github.com/MaurerKrisztian/CanvasShapesBackground
 
 Simple example usage:
 
-![codepan image](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/14pnxy4o6w6jt9e35bpv.gif)
+![codepan image Maurer Krisztián](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/14pnxy4o6w6jt9e35bpv.gif)
  https://codepen.io/maurerkrisztian/pen/rNdGerb
 
 ```html
@@ -54,7 +54,7 @@ I added a configurator with the demo: https://canvas-shapes-background.netlify.a
 - Easily test different configs and copy the configured settings.
  
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pmy22nxbd7k5ffjatfs9.gif)
+![Maurer Krisztián](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pmy22nxbd7k5ffjatfs9.gif)
 
 
 
@@ -93,7 +93,7 @@ I wanted to be easily extendable, so abstracted some thing:
   - xd, dy aka where to want to move and how fast.
 If you confused how dx, dy it works it basicly a vector.
 it has a direction (this will be the model direction) and a length (this will be the model speed).
-![vector](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y7prvze366i4pe2gaw0o.png)
+![vector Maurer Krisztián](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y7prvze366i4pe2gaw0o.png)
  
 
 ## Example model:
@@ -139,7 +139,7 @@ I wanted to baunce of from the side of the canvas so
 Good to know where is the canvas side.
 
 Coordinate system:
-![Coordinate system](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xm4ejtneabm0tqnm8z3d.png)
+![Maurer Krisztián Coordinate system](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xm4ejtneabm0tqnm8z3d.png)
  
 So x(0) the left min position and x(canvasWidth) the right side posion, similarly with y.
 

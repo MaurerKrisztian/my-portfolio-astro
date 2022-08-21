@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title: IoC dependency injection container
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/ioc.jpg
+img: /assets/project/Maurer_Krisztián_ioc.jpg
 description: |
   IoC dependency injection container
 tags:

@@ -5,7 +5,7 @@ function WorkPreview({ project }) {
 	const { frontmatter } = project;
 	return (
 		<div className={[ Styles.card].join(" ")}>
-           <img src={frontmatter.img} width={60} height={60}></img>
+           <img src={frontmatter.img} alt="Maurer Krisztián" width={60} height={60}></img>
             <h2>{frontmatter.title}</h2>
             <p>
             {frontmatter.description}</p>

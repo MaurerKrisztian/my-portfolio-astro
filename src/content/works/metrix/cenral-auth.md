@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title: Central autetication system
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/auth.png
+img: /assets/project/Maurer_Krisztián_auth.png
 description: |
   A microservice what manage authentication multiple projects.
 tags:

@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title:   Image processing algorithm
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/fingerprint.jpg
+img: /assets/project/Maurer_Krisztián_fingerprint.jpg
 description: |
   I worked a image processing algorithm what create a fingerprint image from normal finger image.
 tags:
