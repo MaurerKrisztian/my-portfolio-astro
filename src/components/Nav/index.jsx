@@ -16,6 +16,9 @@ function Nav() {
 			<a className={Styles.link} href="/about">
 				About
 			</a>
+			<a className={Styles.link} href="/blog">
+				Blog
+			</a>
 		</nav>
 	);
 }
