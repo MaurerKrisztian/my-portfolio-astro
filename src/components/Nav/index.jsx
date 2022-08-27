@@ -10,9 +10,6 @@ function Nav() {
 			<a className={Styles.link} href="/projects">
 				Portfolio
 			</a>
-			<a className={Styles.link} href="/works">
-				Works
-			</a>
 			<a className={Styles.link} href="/about">
 				About
 			</a>
