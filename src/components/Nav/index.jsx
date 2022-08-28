@@ -10,11 +10,14 @@ function Nav() {
 			<a className={Styles.link} href="/projects">
 				Portfolio
 			</a>
-			<a className={Styles.link} href="/about">
+			{/* <a className={Styles.link} href="/about">
 				About
-			</a>
+			</a> */}
 			<a className={Styles.link} href="/blog">
 				Blog
+			</a>
+			<a className={Styles.link} href="/contact">
+				Contact me
 			</a>
 		</nav>
 	);

@@ -1,0 +1,174 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Contact me | Maurer Krisztián"
+			description="Learn about Maurer Krisztián's most recent projects"
+		/>
+		<style lang="scss">
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+body {
+	background: #f29107;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Lato', Arial, sans-serif;
+	margin:0;
+	padding:0;
+	padding-bottom:60px;
+}
+.ccheader {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+}
+
+.ccheader h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 2.5em;
+	line-height: 1.3;
+}
+.ccheader {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+}
+
+.ccheader h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 2.5em;
+	line-height: 1.3;
+}
+
+/* Form CSS*/
+.ccform {
+   margin: 0 auto;
+    width: 800px;
+}
+.ccfield-prepend{
+	margin-bottom:10px;
+	width:100%;
+}
+
+.ccform-addon{
+	color:#f8ae45; 
+	float:left;
+	padding:8px;
+	width:8%;
+	background:#FFFFFF;
+	text-align:center;	
+}
+
+.ccformfield {
+	color:#000000; 
+	background:#FFFFFF;
+	border:none;
+	padding:15.5px;
+	width:91.9%;
+	display:block;
+	font-family: 'Lato',Arial,sans-serif;
+	font-size:14px;
+}
+
+.ccformfield {
+	font-family: 'Lato',Arial,sans-serif;
+}
+.ccbtn{
+	display:block;
+	border:none;
+	background:#f8ae45;
+	color:#FFFFFF;
+	padding:12px 25px;
+	cursor:pointer;
+	text-decoration:none;
+	font-weight:bold;
+}
+.ccbtn:hover{
+	background:#d8850e;
+
+}
+.credit {
+  color:#fff;
+  width: 800px;
+  clear:both;
+margin:0 auto;
+  line-height:25px;
+ padding: 25px 50px; 
+}
+.credit em{
+margin-right:5px;
+}
+.credit {
+// color: #0d2ed5;
+font-weight: bold;
+text-decoration: none;
+}
+
+.contacts {
+    text-align: center;
+}
+.c-elemet {
+    padding: 20px;
+}
+
+.contacts a {
+   text-decoration: none;
+   color: #000000;
+}
+
+		</style>
+	</head>
+	<body>
+		<Nav />
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+        <header class="ccheader">
+            <h1><b>Contact me</b></h1>	
+        </header>
+<div class="contacts">
+    <span class="c-elemet"> <a href="https://www.google.com/maps/place/Magyarorsz%C3%A1g/@47.0734517,15.0176097,6z/data=!3m1!4b1!4m5!3m4!1s0x4741837bdf37e4c3:0xc4290c1e1010!8m2!3d47.162494!4d19.5033041" target="_blank">🌎 Hungary</a></span>
+
+    <span class="c-elemet"><a href="tel:+36305170406">📞 +36305170406</a></span>
+    
+    <span class="c-elemet"><a href="mailto:maurerkrisztian@gmail.com">📧 maurerkrisztian@gmail.com</a></span>
+</div>
+        
+        <div class="wrapper">
+            <form method="post" action="https://formspree.io/f/mayavjgd" class="ccform">
+            <div class="ccfield-prepend">
+                <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
+                <input class="ccformfield" name="name" type="text" placeholder="Full Name" required>
+            </div>
+            <div class="ccfield-prepend">
+                <span class="ccform-addon"><i class="fa fa-envelope fa-2x"></i></span>
+                <input name="mail" class="ccformfield" type="text" placeholder="Email" required>
+            </div>
+            <div class="ccfield-prepend">
+                <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+                <input class="ccformfield" name="phone" type="text" placeholder="Phone">
+            </div>
+             <div class="ccfield-prepend">
+                <span class="ccform-addon"><i class="fa fa-info fa-2x"></i></span>
+                <input class="ccformfield" name="subject" type="text" placeholder="Subject" required>
+            </div>
+            <div class="ccfield-prepend">
+                <span class="ccform-addon"><i class="fa fa-comment fa-2x"></i></span>
+                <textarea class="ccformfield" name="message" rows="8" placeholder="Message" required></textarea>
+            </div>
+            <div class="ccfield-prepend">
+                <input class="ccbtn" type="submit" value="Submit">
+            </div>
+            </form>
+        </div>
+		<Footer />
+	</body>
+</html>
