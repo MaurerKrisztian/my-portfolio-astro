@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import Styles from './styles.module.scss';
 
 function PortfolioPreview({ project }) {
@@ -6,7 +5,6 @@ function PortfolioPreview({ project }) {
 	return (
 		<div className={Styles.card}>
 			<img className={Styles.img} src={frontmatter.img} alt="Maurer Krisztián" />
-				{/*<h1 className={Styles.title}>{frontmatter.title}</h1>*/}
 			<div className="pa3">
 				<p className={`${Styles.desc} mt0 mb2`}>{frontmatter.description}</p>
 				<div className={Styles.tags}>
