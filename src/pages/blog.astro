@@ -4,7 +4,9 @@ import Footer from '../components/Footer/index.jsx';
 import Nav from '../components/Nav/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
-const posts: any[] = await fetch("https://dev.to/api/articles?username=maurerkrisztian").then((response) => response.json())
+const postsResponse: any[] = await fetch("https://dev.to/api/articles?username=maurerkrisztian").then((response) => response.json())
+const firstPost = postsResponse.find((posts)=>{return posts.id == 1178705}) || [];
+const posts = [firstPost].concat(postsResponse)
 ---
 
 <html lang="en">
