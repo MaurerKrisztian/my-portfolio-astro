@@ -3,154 +3,90 @@ layout: ../../../layouts/project.astro
 title: Dependency injection container (IoC)
 client: Self
 publishDate: 2020-03-02 00:00:00
-img: /assets/project/Maurer_Krisztián_ioc-container.jpg
-description: Dependency injection container (IoC)
+img: https://user-images.githubusercontent.com/48491140/201497104-1836aea0-27cc-42fa-909c-26219dda6d61.png
+description: General purpose dependency injection framework, focused on simplicity and extendability.
 tags:
 - TypeScript
 - TypeScript Decorators
 - Dependency injection
 ---
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
 
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=bugs)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=MaurerKrisztian_minimal-dependency-injection&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=MaurerKrisztian_minimal-dependency-injection)
+![DALL·E 2022-11-12 23 28 30 - Pizza with code bacground, cyberpunk style (1) (1)](https://user-images.githubusercontent.com/48491140/201497104-1836aea0-27cc-42fa-909c-26219dda6d61.png)
 
-# minimal-dependency-injection-container [![npm version](https://badge.fury.io/js/minimal-dependency-injection-container.svg)](https://badge.fury.io/js/minimal-dependency-injection-container)
-### Minimal DI container, which support:
-* bean registration:
-  * new instantiation
-  * singleton
-  * constant definition
-  * factory
-* bean injection by key, type
+# type-chef-di [![npm version](https://img.shields.io/npm/v/type-chef-di)](https://www.npmjs.com/package/type-chef-di) ![NPM Downloads](https://img.shields.io/npm/dw/type-chef-di)
 
+
+
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=bugs)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=OpenZer0_type-chef-di&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=OpenZer0_type-chef-di)
+
+
+## Type-chef-di is a general purpose dependency injection framework, focused on simplicity and extendability.
+
+### Documentation: https://zer0-2.gitbook.io/type-chef-di
 
 ### Setup:
-#### tsconfig.json:
+
+tsconfig.json:
 ```json
 {
   "experimentalDecorators": true,
-  "emitDecoratorMetadata": true, 
+  "emitDecoratorMetadata": true,
   "target": "es6"
 }
 ```
+Install the npm package:
 
-### Decorators:
-```typescript
-@Injectable() 
-@Inject(key: string) // inject class constructor parameters or method parameters
-@InjectProperty(key: string) // inject class property
-@RunBefore(key: string) // when call a method run before
-@RunAfter(key: string) // when call a method run after return
-@Setter() // run after class instantification
-@InitMethod()  // run after class instantification
-@MethodWrapper(key: string)  // wrap the function with a IMethodWrapper class
-@FactoryMethod()
-@AddTags(tags) //  you can retrieve the entities it from the container with the tags
+```sh
+npm install type-chef-di
 ```
 
-### REGISTER:
-```typescript
-//REGISTER
-container.register('key', value) //value can be a class definition, constant or a function
-// you have some options when register: 
-// .asPrototype, .asSingleton .asConstant(), .asFactory(factoryFnName?: string), .withContext(context: {})
-container.register('key2', value).asPrototype() //new instance
-container.register('key3', value).asSingleton() //as singleton
-container.register('key4', value).asSingleton().withContext({'paramKey': 'otherKey', 'paramKey2': 'otherKey2'}) // register with context: @Inject('paramKey') ... it will replace to 'otherKey'
-container.register('key4', 'some constant').asConstant() // register constant
-container.register('factoryKey', FactoryClass).asFactory();
-container.register('factoryResult', String).asFactoryResult('factoryKey');
+https://www.npmjs.com/package/type-chef-di
 
-container.registerTypes([MyClass, Myclass2]) // registrate by type
-```
-
-### RESOLVE:
-```typescript
-//RESOLVE
-const resolveResult = await container.resolve<Type>('key');
-const productController = await container.resolveByType<ProductController>(ProductController)
-```
-## Before - After
-Before:
-```typescript
-const productController  = new ProductController(new CacheService(new ProductRepository(new Database(connect)), new ScraperService(new ScraperServiceOptions(), true)));
-```
-After:
-```typescript
-const container = new Container({enableAutoCreate: true});
-const productController = await container.resolveByType<ProductController>(ProductController)
-```
-
-After 2:
-```typescript
-const container = new Container({enableAutoCreate: true});
-container.registerTypes([
-  ProductController,
-  CacheService,
-  ProductRepository,
-  Database,
-  ScraperService,
-  ScraperServiceOptions,
-])
-const productController = await container.resolveByType<ProductController>(ProductController)
-```
-
-After 3:
-```typescript
-const container = new Container();
-container.register('ScraperServiceOptions',  ScraperServiceOptions).asSingleton();
-container.register('visible', true).asConstant()
-container.register('ScraperService', ScraperService).asSingleton();
-container.register('connection', connect).asConstant();
-container.register('Database', Database).asSingleton();
-container.register('ProductRepository', ProductRepository).asSingleton();
-container.register('CacheService', CacheService).asSingleton();
-container.register('ProductController', ProductController).asSingleton();
-const productController = await container.resolve<ProductController>('ProductController');
-```
-Or can be combined as you wish.
-
-
-### Simplest usage without registration:
+One of the feature that may be interesting for you is the Type resolution. essentially, you can resolve types without registering them to the DI. The DI container will try to resolve by looking the constructor param types recuresively.
 
 ```typescript
-@Injectable
-class Something {
+import { Container, Injectable } from "type-chef-di";
 
-    public getValue() {
-        return "more";
+@Injectable()
+class SayService {
+
+    public getString() {
+        return "pizza";
     }
 }
 
-@Injectable
-class SomethingElse {
-    constructor(private readonly something: Something, private readonly str: string = "pizza") {
-    }
+@Injectable()
+class SayService2 {
 
-    public getValue() {
-        return `need ${this.something.getValue()} ${this.str}`;
+    public getString() {
+        return "coffee";
     }
 }
 
-@Injectable
+
+@Injectable()
 class Client {
-    constructor(private readonly something: Something, private readonly somethingElse: SomethingElse) {
+    constructor(private readonly sayService: SayService,
+                private readonly sayService2: SayService2) {
     }
 
     public say() {
-        return `I ${this.somethingElse.getValue()} and ${this.something.getValue()} coffee.`;
+        return `I like ${this.sayService.getString()} and ${this.sayService2.getString()}`;
     }
 }
 
-@Injectable
+@Injectable({instantiation: "singleton"})
 class Service {
     constructor(private readonly client: Client) {
     }
@@ -160,178 +96,161 @@ class Service {
     }
 }
 
-// create the container
-const container = new Container({enableAutoCreate: true});
 
-// resolve without registration any @Injectable class
-const service = await container.resolveByType<Service>(Service);
-
-console.log(service.check());  // it will be: "client says: I need more pizza and more coffee."
-```
-
-
-#### If you don't enable enableAutoCreate, the above code will look like this:
-```typescript
-    const container = new Container();
-
-    // registrate all dependencies 
-    await container.registerTypes([
-        Something,
-        Client,
-        Service,
-        SomethingElse
-    ]);
-
-    // you can run a coontainer test, it will check all the the dependencies.
-    // container.containerTest(); // if something missing throw a error
-
-    const service = await container.resolveByType<Service>(Service);
-    console.log(service.check());  // it will be: "client says: I need more pizza and more coffee."
-```
-
-
-#### You can specify every injected key:
-```typescript
-class Client {
-  constructor(@Inject('value') private readonly value: string) {
-  }
-  public say() {
-    return `hello ${this.value}`;
-  }
+async function run() {
+    const container = new Container({enableAutoCreate: true});
+    const service = await container.resolveByType<Service>(Service); // new Service(new Client(new SayService(), new SayService2()));
+    console.log(service.check()); // client says: I like pizza and coffee
 }
+
+run();
+```
+
+You can choose the instantiation mode: singleton / new instance.
+
+but if you want to use interfaces, you can do so with this automatic resolution just use the @Inject decorator with the type.
+
+```typescript
+constructor(@Inject<IOptions>(OptionClass) options: IOptions,
+ @Inject<IOptions>(OptionClass2) options2: IOptions) {}
+```
+
+Registration process can be manual or automatic.
+Manually eg container.register("key", value), .registerTypes([Service, FoodFactory])
+then you can inject the registered key into the constructor with the Inject('key') decorator.
+
+```typescript
 class Service {
-  constructor(@Inject('client') private readonly client: Client) {}
-  public check() {
-    return `client says: ${this.client.say()}`;
-  }
+
+    constructor(@Inject("serviceStr") private readonly value: string) {
+    }
+
+    public say() {
+        return `${this.value}`;
+    }
 }
-const container: IContainer = new Container();
-container.register('value', "world");
-container.register('client', Client);
-container.register('service', Service);
-const service = container.resolve<Service>('service');
-console.log(service.check()); // Should write "client says: hello world"
+class Client {
+
+    constructor(
+             @Inject("clientStr") private readonly value: string,
+             @Inject("service") private readonly service: Service // or  @Inject<IService>(Service)
+             ) {
+    }
+
+    public say() {
+        return `I like ${this.value} and ${this.service.say()}`;
+    }
+}
+
+
+async function run() {
+    const container = new Container();
+    container.register("clientStr", "coffee").asConstant();
+    container.register("serviceStr", "pizza").asConstant();
+    container.register("service", Service).asPrototype();
+    container.register("client", Client).asSingleton();
+    const service = await container.resolve<Client>("client"); // new Service('pizza');
+    const service2 = await container.resolveByType<Client>(Client); // new Client('coffee', new Service('pizza'));
+    console.log(service.say()); // client says: I like pizza and coffee
+    console.log(service2.say()); // client says: I like pizza and coffee
+}
+
+run();
 ```
 
+If you want more control over the injection process you can use the token injection. This lets you inject the value that you registered.
 
-### @InjectProperty example
+The DI can't resolve automatically the primitive types / interfaces: eg. string, number, interfaces... You must specify  the value and use the @Inject decorator for that
+
 ```typescript
-    class Test {
-        @InjectProperty('value')
-        testProp: any;
+constructor(service: Service,
+ @Inject('options') options: IOptions)
+
+constructor(service: Service,
+ @Inject<IOptions>(OptionClass) options: IOptions,
+ @Inject<IOptions>(OptionClass2) options2: IOptions)
+```
+
+Explanation:
+
+`service: Service`: if {enableAutoCreate: true} you don't have to do anything it will register and resolve automatically. if false you need to register before resolution eg container.registerByType(Service)  but you can inject it with @Inject if you want.
+
+`@Inject('options') options: IOptions` - this cannot be resolved automatically because this is just a general interface (IOptions), you need to specify (by registering) a token eg 'option' and inject via @Inject("key")
+
+`@Inject(OptionClass) options: IOptions, @Inject<IOptions>(OptionClass2) options2: IOptions)`  - You can directly specify the class that you want to inject, this way you don't need to register the OptionClass (the generic will check the passed type correctness)
+
+
+If the key is not registered, the resolution process will fail.
+You can check the container after you finished the configuration:
+container.done()
+This will try to resolve all the registered keys, and types.
+
+
+After instatniation you can also run Initializers eg. MethodWrapper, RunBefore, InitMethod erc. or you can easily create your own.
+
+```typescript
+export class MeasureWrapper implements IMethodWrapper {
+    constructor() { // DI will resolve dependencies (type & key injection)
+    }
+
+    async run(next: Function, params: any[]) {
+        // run code before
+        const start = new Date().getTime();
         
-        @InjectProperty('value2')
-        testProp2: any;
+        // call original fn
+        const res = await next() // (params automatically added)
         
-        constructor() {
-        }
+        //run code after
+        const end = new Date().getTime();
+        const time = end - start;
+        console.log(`Execution time: ${time} ms`)
+        
+        // return fn result
+        return res;
     }
-    container.register('value', 'happy');
-    container.register('value2', 'panda');
-    container.register('test', Test);
-    const testObj = await container.resolve<Test>('test');
-    console.log(`I am a ${testObj.testProp} ${testObj.testProp2}`) // result: I am a happy panda
-```
 
-### @Stetter() example
-```typescript
-        const container = new Container();
-        class SetterTestClass {
-            panda: string = "sad panda";
-            @Setter()
-            set pandaSetter(@Inject('param1') param1: string) {
-                this.panda = param1;
-            }
-            constructor() {
-            }
-        }
-        const param1 = "happy panda"
-        container.register('SetterTestClass', SetterTestClass);
-        container.register('param1', param1)
-        const setterTestClass = await container.resolve<SetterTestClass>('SetterTestClass');
-        console.log(setterTestClass.panda) // it should be "happy panda"
-```
-
-
-
-### @RunAfter, @RunBefore, @MethodWrapper example
-#### !! Currently don't work with "this" ref !!
-* you can use this decorators individually or together
-```typescript
-    class Test {
-        @MethodWrapper('MyMethodWrapper')
-        @RunAfter('MyRunAfter')
-        @RunBefore('MyRunBefore')
-        testFn(p: string, p2: string) {
-            console.log("p = " + p, " p2 = " + p2);
-        }
-    }
-    class MyRunAfter implements IRunAfter {
-        run(): void {
-            console.log('run this after.')
-        }
-    }
-    class MyRunBefore implements IRunBefore {
-        run() {
-            console.log("run before.")
-        }
-    }
-    class MyMethodWrapper implements IMethodWrapper {
-        run(next: Function, params: any[]): any {
-            console.log("wrapper before.")
-            next(...params);
-            console.log("wrapper after.")
-        }
-    }
 }
-    container.register('MyRunBefore', MyRunBefore);
-    container.register('MyRunAfter', MyRunAfter);
-    container.register('MyMethodWrapper', MyMethodWrapper);
-    container.register('test', Test);
-    const testObj = await container.resolve<Test>('test');
-    testObj.testFn('test', 'test2');
-// log result:    
-/*
-wrapper before.
-run before.
-p = test  p2 = test2
-run this after.
-wrapper after.
-*/
+
+ class Test {
+
+    @MeasureWrapper(MeasureWrapper) // or use registerd string key
+    foo(p1:string, p2: string){
+        console.log("original fn: ", p1, p2)
+        // ...
+    }       
+}
+
+/* After Test.foo is called
+ it will log the  `Execution time: ${time} ms` because of the @MeasureWrapper */
+ 
+
 ```
 
-#### Factory sample:
+
+There are a few more features:
+
 ```typescript
-export class FactoryClass {
-    constructor(@Inject("factoryParam1") private readonly value: string) {
-    }
-    getValue() {
-        return this.value;
-    }
-    create() {
-        return "This is ths FactoryClass create() result."
-    }
-    @FactoryMethod()
-    factoryMethodName(@Inject('factoryMethodKey1') value: string, @Inject('factoryMethodKey2') value2: string) {
-        return "factoryMethodName result: value: " + value + " value2: " + value2;
-    }
-    create2() {
-        return "create2 result";
-    }
-}
-const container = new Container();
-const firstFactoryParam = "firstFactoryParam";
-const secondFactoryParam = "secondFactoryParam";
-container.register('factoryParam1', 'factoryParam1 constant data').asConstant()
-container.register('factoryMethodKey1', firstFactoryParam).asConstant();
-container.register('factoryMethodKey2', secondFactoryParam).asConstant();
-container.register('factoryKey', FactoryClass).asFactory()
-// if asFactory() param empty call the @FactoryMethod fn, but if it is not exist default is create()
-container.register('factoryResult', String).asFactoryResult('factoryKey');
-const factoryResult = container.resolve<String>('factoryResult'); // it will be "factoryResult:  factoryMethodName result: value: firstFactoryParam value2: secondFactoryParam"
-container.register('otherParam1', 'replaced1').asConstant();
-container.register('otherParam2', 'replaced2').asConstant();
-container.register('factoryKey2', FactoryClass).asFactory();
-container.register('factoryResult2', String).asFactoryResult('factoryKey2').withMethodContext({'factoryMethodKey1': 'otherParam1', 'factoryMethodKey2': 'otherParam2'});
-const factoryResult2 = container.resolve<String>('factoryResult2'); // it will be: factoryResult:  factoryMethodName result: value: replaced1 value2: replaced2
+@RunBefore(key: string | Type<IRunBefore>) // run before method call
+@RunAfter(key: string | Type<IRunAfter>) // run after method call
+@AddTags(tags) // resolve tagged classes
+@InitMethod() // run init fuction after instantiation
+@InjectProperty<T>(key: string | Type<T>) // @Inject just for class props
 ```
+I tried to keep this readme short, if you are interested, check the documentation https://zer0-2.gitbook.io/type-chef-di/
+
+
+## Contribution
+All contributions are welcome ❤️
+
+Check out the [issues](https://github.com/OpenZer0/type-chef-di/issues) or improve the test coverage
+
+Test coverage(main): https://type-chef-di-coverage.netlify.app/
+
+### Documentation
+https://zer0-2.gitbook.io/type-chef-di/
+
+There are still things to improve and document, you can help,
+if you would like to improve the documentation, click on the "edit on GitHub" button and make a pull request.
+
+
+![Maurer Krisztián](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvztdtigbpibxyjhiby7.png)
