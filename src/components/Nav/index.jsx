@@ -8,16 +8,19 @@ function Nav() {
 				<div className={Styles.monogram}>MK</div>
 			</a>
 			<a className={Styles.link} href="/">
-				Home
+			About me & work
 			</a>
 			<a className={Styles.link} href="/projects">
-				Portfolio
+				projects
 			</a>
 			{/* <a className={Styles.link} href="/about">
 				About
 			</a> */}
 			<a className={Styles.link} href="/blog">
 				Blog
+			</a>
+			<a className={Styles.link} href="/book-review">
+				Books
 			</a>
 			<a className={Styles.link} href="/contact">
 				Contact me

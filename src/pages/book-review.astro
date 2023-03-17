@@ -1,0 +1,549 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="All Projects | Maurer Krisztián"
+			description="Learn about Maurer Krisztián's most recent projects"
+		/>
+		<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::before,
+::after {
+	content: "";
+}
+
+body {
+	background: #ecf0f1;
+	color: #34495e;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: #2c3e50;
+	text-decoration: none;
+}
+
+
+.align {
+	clear: both;
+	margin: 120px auto 20px;
+	width: 100%;
+	max-width: 1170px;
+	text-align: center;
+}
+
+.align>li {
+	width: 700px;
+	min-height: 300px;
+	display: inline-block;
+	margin: 30px 20px 30px 30px;
+	padding: 0 0 0 60px;
+	vertical-align: top;
+}
+
+.book {
+	position: relative;
+	width: 160px;
+	height: 220px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+/*
+	2. background & color
+*/
+
+/* HARDCOVER FRONT */
+.hardcover_front li:first-child {
+	background-color: #eee;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* reverse */
+.hardcover_front li:last-child {
+	background: #fffbec;
+}
+
+/* HARDCOVER BACK */
+.hardcover_back li:first-child {
+	background: #fffbec;
+}
+
+/* reverse */
+.hardcover_back li:last-child {
+	background: #fffbec;
+}
+
+.book_spine li:first-child {
+	background: #eee;
+}
+
+.book_spine li:last-child {
+	background: #333;
+}
+
+/* thickness of cover */
+
+.hardcover_front li:first-child:after,
+.hardcover_front li:first-child:before,
+.hardcover_front li:last-child:after,
+.hardcover_front li:last-child:before,
+.hardcover_back li:first-child:after,
+.hardcover_back li:first-child:before,
+.hardcover_back li:last-child:after,
+.hardcover_back li:last-child:before,
+.book_spine li:first-child:after,
+.book_spine li:first-child:before,
+.book_spine li:last-child:after,
+.book_spine li:last-child:before {
+	background: #999;
+}
+
+/* page */
+
+.page>li {
+	background: -webkit-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+	background: -moz-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+	background: -ms-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+	background: linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+	box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
+	border-radius: 0px 5px 5px 0px;
+}
+
+/*
+	3. opening cover, back cover and pages
+*/
+
+.hardcover_front {
+	transform: rotateY(-34deg) translateZ(8px);
+	z-index: 100;
+}
+
+.hardcover_back {
+	transform: rotateY(-15deg) translateZ(-8px);
+}
+
+.page li:nth-child(1) {
+	transform: rotateY(-28deg);
+}
+
+.page li:nth-child(2) {
+	transform: rotateY(-30deg);
+}
+
+.page li:nth-child(3) {
+	transform: rotateY(-32deg);
+}
+
+.page li:nth-child(4) {
+	transform: rotateY(-34deg);
+}
+
+.page li:nth-child(5) {
+	transform: rotateY(-36deg);
+}
+
+/*
+	4. position, transform & transition
+*/
+
+.hardcover_front,
+.hardcover_back,
+.book_spine,
+.hardcover_front li,
+.hardcover_back li,
+.book_spine li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+}
+
+.hardcover_front,
+.hardcover_back {
+	transform-origin: 0% 100%;
+}
+
+.hardcover_front {
+	transition: all 0.8s ease, z-index 0.6s;
+}
+
+/* HARDCOVER front */
+.hardcover_front li:first-child {
+	cursor: default;
+	user-select: none;
+	transform: translateZ(2px);
+}
+
+.hardcover_front li:last-child {
+	transform: rotateY(180deg) translateZ(2px);
+}
+
+/* HARDCOVER back */
+.hardcover_back li:first-child {
+	transform: translateZ(2px);
+}
+
+.hardcover_back li:last-child {
+	transform: translateZ(-2px);
+}
+
+/* thickness of cover */
+.hardcover_front li:first-child:after,
+.hardcover_front li:first-child:before,
+.hardcover_front li:last-child:after,
+.hardcover_front li:last-child:before,
+.hardcover_back li:first-child:after,
+.hardcover_back li:first-child:before,
+.hardcover_back li:last-child:after,
+.hardcover_back li:last-child:before,
+.book_spine li:first-child:after,
+.book_spine li:first-child:before,
+.book_spine li:last-child:after,
+.book_spine li:last-child:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* HARDCOVER front */
+.hardcover_front li:first-child:after,
+.hardcover_front li:first-child:before {
+	width: 4px;
+	height: 100%;
+}
+
+.hardcover_front li:first-child:after {
+	transform: rotateY(90deg) translateZ(-2px) translateX(2px);
+}
+
+.hardcover_front li:first-child:before {
+	transform: rotateY(90deg) translateZ(158px) translateX(2px);
+}
+
+.hardcover_front li:last-child:after,
+.hardcover_front li:last-child:before {
+	width: 4px;
+	height: 160px;
+}
+
+.hardcover_front li:last-child:after {
+	transform: rotateX(90deg) rotateZ(90deg) translateZ(80px) translateX(-2px) translateY(-78px);
+}
+
+.hardcover_front li:last-child:before {
+	box-shadow: 0px 0px 30px 5px #333;
+	transform: rotateX(90deg) rotateZ(90deg) translateZ(-140px) translateX(-2px) translateY(-78px);
+}
+
+/* thickness of cover */
+
+.hardcover_back li:first-child:after,
+.hardcover_back li:first-child:before {
+	width: 4px;
+	height: 100%;
+}
+
+.hardcover_back li:first-child:after {
+	transform: rotateY(90deg) translateZ(-2px) translateX(2px);
+}
+
+.hardcover_back li:first-child:before {
+	transform: rotateY(90deg) translateZ(158px) translateX(2px);
+}
+
+.hardcover_back li:last-child:after,
+.hardcover_back li:last-child:before {
+	width: 4px;
+	height: 160px;
+}
+
+.hardcover_back li:last-child:after {
+	transform: rotateX(90deg) rotateZ(90deg) translateZ(80px) translateX(2px) translateY(-78px);
+}
+
+.hardcover_back li:last-child:before {
+	box-shadow: 10px -1px 80px 20px #666;
+	transform: rotateX(90deg) rotateZ(90deg) translateZ(-140px) translateX(2px) translateY(-78px);
+}
+
+/* BOOK SPINE */
+.book_spine {
+	transform: rotateY(60deg) translateX(-5px) translateZ(-12px);
+	width: 16px;
+	z-index: 0;
+}
+
+.book_spine li:first-child {
+	transform: translateZ(2px);
+}
+
+.book_spine li:last-child {
+	transform: translateZ(-2px);
+}
+
+/* thickness of book spine */
+.book_spine li:first-child:after,
+.book_spine li:first-child:before {
+	width: 4px;
+	height: 100%;
+}
+
+.book_spine li:first-child:after {
+	transform: rotateY(90deg) translateZ(-2px) translateX(2px);
+}
+
+.book_spine li:first-child:before {
+	transform: rotateY(-90deg) translateZ(-12px);
+}
+
+.book_spine li:last-child:after,
+.book_spine li:last-child:before {
+	width: 4px;
+	height: 16px;
+}
+
+.book_spine li:last-child:after {
+	transform: rotateX(90deg) rotateZ(90deg) translateZ(8px) translateX(2px) translateY(-6px);
+}
+
+.book_spine li:last-child:before {
+	box-shadow: 5px -1px 100px 40px rgba(0, 0, 0, 0.2);
+	transform: rotateX(90deg) rotateZ(90deg) translateZ(-210px) translateX(2px) translateY(-6px);
+}
+
+.page,
+.page>li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform-style: preserve-3d;
+}
+
+.page {
+	width: 100%;
+	height: 98%;
+	top: 1%;
+	left: 3%;
+	z-index: 10;
+}
+
+.page>li {
+	width: 100%;
+	height: 100%;
+	transform-origin: left center;
+	transition-property: transform;
+	transition-timing-function: ease;
+}
+
+.page>li:nth-child(1) {
+	transition-duration: 0.6s;
+}
+
+.page>li:nth-child(2) {
+	transition-duration: 0.6s;
+}
+
+.page>li:nth-child(3) {
+	transition-duration: 0.4s;
+}
+
+.page>li:nth-child(4) {
+	transition-duration: 0.5s;
+}
+
+.page>li:nth-child(5) {
+	transition-duration: 0.6s;
+}
+
+/*
+	5. events
+*/
+
+.book:hover>.hardcover_front {
+	transform: rotateY(-145deg) translateZ(0);
+	z-index: 0;
+}
+
+.book:hover>.page li:nth-child(1) {
+	transform: rotateY(-30deg);
+	transition-duration: 1.5s;
+}
+
+.book:hover>.page li:nth-child(2) {
+	transform: rotateY(-35deg);
+	transition-duration: 1.8s;
+}
+
+.book:hover>.page li:nth-child(3) {
+	transform: rotateY(-118deg);
+	transition-duration: 1.6s;
+}
+
+.book:hover>.page li:nth-child(4) {
+	transform: rotateY(-130deg);
+	transition-duration: 1.4s;
+}
+
+.book:hover>.page li:nth-child(5) {
+	transform: rotateY(-140deg);
+	transition-duration: 1.2s;
+}
+
+/* figcaption */
+
+figcaption {
+	padding-left: 40px;
+	text-align: left;
+	position: absolute;
+	top: 0%;
+	left: 160px;
+	width: 420px;
+	-webkit-backface-visibility: hidden;
+}
+
+figcaption h1 {
+	margin: 0;
+	font-size: 22px;
+    font-weight: 500;
+}
+
+figcaption span {
+    color: #16a085;
+    padding: 0.6em 0 1em 0;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+figcaption p {
+	color: #596470;
+    font-size: 15px;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.book-cover {
+    height: 400px;
+    padding: 5px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 37.8125em) {
+	.align>li {
+		width: 100%;
+		min-height: 440px;
+		height: auto;
+		padding: 0;
+		margin: 0 0 30px 0;
+	}
+
+	.book {
+		margin: 0 auto;
+	}
+
+	figcaption {
+		text-align: center;
+		width: 320px;
+		top: 250px;
+		padding-left: 0;
+		left: -80px;
+		font-size: 90%;
+	}
+}
+		</style>
+	</head>
+	<body>
+		<Nav />
+
+
+
+        <div class="container">
+			<ul class="align">
+				<li>
+					<figure class='book'>
+
+						<!-- Front -->
+						<ul class='hardcover_front'>
+							<li>
+								<img src="https://lh3.googleusercontent.com/X-o5cmg3diG4nayxqyCuM_a-KjWv2-sBh8l7BKTMyPG9r2hEJo6n-eDZT7pM8Y2SPuc39BwwrjdSDFymTngTVOlQQ3dcbEN4e7W3IcfiEcYnHcvOQ6ChW6_WdafTQg_zqzIflK6ATkpprbxx6GJnsIly717uLDriHJeX7eMkUi4Re7sAxpWUIYEAGmB3OHuEbgMdzuoEi8zYcvisVwE4K34xbNJT6Pf9cMsKQnkLgYDhGzZBSNZKK9R9Bf0jvTYmAg2qCozROrKG1U7OBAlW64lqjwLiiYcbn76F5LVFvmxN3QVfdn4ZKfVSOsEXqbz2bFikRhdN5Nz-Ev3MCa6F4zGnR0N098SOE78BMMsNiPKkPWbpkW8CF2JX76QYn8Ipn5RxN-MTThlVbeB29I7hAuS9vL8yW4fHJ5LF9AtZL_vxasfnF-xz5ybHEFjBG6BezEaM2kvy9_K6NMzxAsFsAcfcyIysCMSVNDnwYOXIbV4inWm3SfgTgZfrhBhgPl8wz84vlMSO_ZVSc0NEuN5lcpq6YGwbjWlplViKSW6KcgnL7lebQ_Kyi6nrisBx2q-RjgoKiUjahjErbMXi5GHsgFCi6VsljUvJlQPCGAmJxuh60lVXoBzcatVOg7fiJS0FN175ifzWU__u5GvWaUjtw9bRXkg5hDf2i-PWHyptq43MdGNHVACGPhczSG1dyQ=w411-h512-no?authuser=0" alt="" width="100%" height="100%">
+							</li>
+							<li></li>
+						</ul>
+
+						<!-- Pages -->
+						<ul class='page'>
+							<li></li>
+							<li>
+								<img src="https://lh3.googleusercontent.com/uxWTKhuHlQ9dk2iQozBe2Ryw_zLeX5Q_B4f0KTse45P8SoVAa3LmDW3_esYKzstUzLojxV0k8VilERMM-k5qUM08xegiG5CjejLEwNY8yyNWJZ2_z_UQw3nYfxjUnt9bNRKLrk5heZwYb74syexMUhB-PBYbuGdz-pJunqJjgnFUjZTch6UPqULhS8w9PbBZQQHQd0D3nGoU6kCM_99nm6LQyM73eFegs7bQ4gZbHr6Sni-wAf1Dd9A4j3zNNseWOzUnYX-RqYdUl0YO2SI5vumvlk1nv2BCK2E0Ev2r6AcN3_vyWpuEzRvvfcWiwl7DeqjfZNSvfFnxt-V5X5i2VVhrU74xHZ_T-dLD-P7Wk3GaKd7okSG3xACFQMhOAIVVEU8WH5EcoPo0zfE3OYhpIEVEGzhySnwrxabghzf_buHZNFYsDs5uXaQ5UAJwzPyjgb_wj-czPdNCkgwv6icjle8yrTvYMtmsXJBweKVhdz70jPafYEtzF6Z-zQkw7IbWNl97XPQ0jCrMz5Vh3HKtYKMv-uofJnwaia4zdtEurzFuZYZPYPF5K4zKqb38UmODCoNaDRfTh8GnwQWSVBLgjXVab3Ts6C9-c0p7Rt2J0nUWcaDNf8Yahbfp91C8RHFphOsEQb1HuCH4_Wi8ZAC8D9hH_1h3-qEy8SArXQZMVUQsmyIg69LhdxWBsDmTMQ=w411-h512-no?authuser=0" alt="" width="100%" height="100%">
+							</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+
+						<!-- Back -->
+						<ul class='hardcover_back'>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul class='book_spine'>
+							<li></li>
+							<li></li>
+						</ul>
+						<figcaption>
+							<h1>Book review and recommendations</h1>
+							<span>by Maurer Krisztán</span>
+							<p> I'm drawn to books with evergreen content - insights and information that remain valuable over time. In this section, I'll be sharing my reviews and recommendations for such books.</p>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>
+	</div>
+		<div class="wrapper">
+
+            <h2>Code quality</h2><br>
+            
+            <img src="https://m.media-amazon.com/images/I/41xShlnTZTL._SX258_BO1,204,203,200_.jpg" class="book-cover">
+
+            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41-sN-mzwKL._AC_UF1000,1000_QL80_.jpg"  class="book-cover">    
+
+            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51uO-K+V5dL.jpg" class="book-cover">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLb9UbNwuBGPeoTDdbLXncPIoluOAg81uIS2lN6-AYrPbziST7T3ClA2oipgkpWDBVfx0&usqp=CAU"  class="book-cover"> 
+
+            <br><br> <hr/><br>
+
+            <h2> Machine Learning </h2><br>
+
+            <img src=" https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1476012532i/32505087.jpg" class="book-cover">    
+            <img src=" https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81R5BmGtv-L._AC_UF1000,1000_QL80_.jpg" class="book-cover">    
+
+		</div>
+		<Footer />
+	</body>
+</html>
