@@ -1,0 +1,263 @@
+<!DOCTYPE html><link rel="stylesheet" href="/assets/e7ed4dfc.5864f3d6.css" />
+<link rel="stylesheet" href="/assets/d1f82981.6c3cc81b.css" /><script type="module" src="/hoisted.e681e719.js"></script><html lang="en" class="astro-FNBAIWJC">
+	<head>
+		<meta charset="UTF-8">
+
+<meta name="title" property="og:title" content="Maurer Krisztián: Personal Site">
+<meta name="description" property="og:description" content="Hi , I'm Maurer Krisztian · A passionate full stack developer from Hungary · Connect with me: · CV: · Blog: · Discord: · Languages and Tools:.">
+<meta property="og:image" content="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8sm83mcibpxa0giedjfo.jpg">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Astro v1.0.3">
+<title>AI Issue Improver GitHub Action</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EC4B0NZ4G"></script>
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+
+		
+	<link rel="stylesheet" href="/assets/e7ed4dfc.5864f3d6.css" />
+<link rel="stylesheet" href="/assets/d1f82981.6c3cc81b.css" /><script type="module" src="/hoisted.e681e719.js"></script></head>
+	<body class="astro-FNBAIWJC">
+		<nav class="_nav_1tpto_1"><a class="_logolink_1tpto_11" href="/"><div class="_monogram_1tpto_31">MK</div></a><a class="_link_1tpto_17" href="/">About me &amp; work</a><a class="_link_1tpto_17" href="/projects">projects</a><a class="_link_1tpto_17" href="/blog">Blog</a><a class="_link_1tpto_17" href="/contact">Contact me</a></nav>
+		<header style="background-image:url(/assets/project/Maurer_Krisztian_issue-improver-ai-project.png)" class="hero astro-FNBAIWJC">
+			<h1 class="title astro-FNBAIWJC">AI Issue Improver GitHub Action</h1>
+		</header>
+		<div class="leadIn astro-FNBAIWJC">
+			<div class="wrapper pt8 pb8 mb8 tac astro-FNBAIWJC">
+				<span class="tag astro-FNBAIWJC">AI</span><span class="tag astro-FNBAIWJC">GitHub actions</span><span class="tag astro-FNBAIWJC">dev tool</span>
+				<h3 class="tagline astro-FNBAIWJC">GitHub Action that improves GitHub issues using OpenAI GPT. (GitHub + DEV 2023 Hackathon)
+</h3>
+			</div>
+		</div>
+		<div class="wrapper wrapper__readable astro-FNBAIWJC">
+			<div class="content astro-FNBAIWJC"><p>GitHub Action that improves GitHub issues using OpenAI GPT. (GitHub + DEV 2023 Hackathon)</p>
+<p>GitHUb: <a href="https://github.com/MaurerKrisztian/issue-improver-action">https://github.com/MaurerKrisztian/issue-improver-action</a></p>
+<h1 id="issue-improver-action">issue-improver-action</h1>
+<p><img src="https://user-images.githubusercontent.com/48491140/234571713-eb6a3708-40b5-4b81-903d-7c4d0b16ccea.png" alt="Maurer Krisztian"></p>
+<p>GitHub Action that automates issue improvement using OpenAI.</p>
+<h2 id="inputs">Inputs:</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Input</th><th>Required</th><th>Default</th><th>Info</th></tr></thead><tbody><tr><td>openai-key</td><td>Yes</td><td>N/A</td><td>OpenAI API key</td></tr><tr><td>config-file</td><td>No</td><td>issue-improver-config.json</td><td>Configuration file</td></tr><tr><td>add-related-issues-section</td><td>No</td><td>false</td><td>Create a related issues section.</td></tr><tr><td>add-summary-section</td><td>No</td><td>false</td><td>Create a summary section.</td></tr><tr><td>add-comment-summary-section</td><td>No</td><td>false</td><td>Create comment summary</td></tr><tr><td>add-custom-section</td><td>No</td><td>N/A</td><td>custom section title/id comma separated string. ”*” means include all.</td></tr><tr><td>add-label-section</td><td>No</td><td>false</td><td>Create label suggesion</td></tr><tr><td>model</td><td>No</td><td>‘text-davinci-003’</td><td>OpenAI model</td></tr><tr><td>max-tokens</td><td>No</td><td>150</td><td>OpenAI max_tokens (response length)</td></tr><tr><td>debug-mode</td><td>No</td><td>false</td><td>Enable debug mode: Don’t create comment</td></tr></tbody></table>
+<h2 id="how-does-it-work">How does It work?</h2>
+<p>This action can be triggered to gather the relevant issue data, make usefully comments with GPT model.</p>
+<p>One of the main building blocs is the “sections” every section has at lease a title and prompt parameter,
+you can specify which section do you need at the action workflow yml. When the action runs, resolves all selected sections prompts with Openapi GPT model.
+The prompts has default values (see: <code>src/config/default-config.ts</code>) but you can fully customize all of them and create custom sections.
+The resulting responses will then be added as a comment to the issue.</p>
+<h2 id="try-it-out-here-demo-repository">Try it out here: <a href="https://github.com/MaurerKrisztian/issue-improver-action-demo">Demo repository</a></h2>
+<h2 id="built-in-sections">Built in sections:</h2>
+<h3 id="related-issues-section">related-issues-section</h3>
+<p>Find related issues among open issues.</p>
+<p>I have noticed that many open-source projects have few maintainers and a lot of issues.
+Some issues are duplicates, while others are related to each other. These details are useful to the maintainer.
+With the assistance of AI, this action will create a “related issues” section in the comment.</p>
+<h3 id="label-section">label-section</h3>
+<p>Find relevant labels for the issue.</p>
+<p>The action will get all the labels and descriptions and issue data, based on that create a label suggession.</p>
+<h3 id="summary-section">summary-section</h3>
+<p>Summarize the issue text.</p>
+<h3 id="custom-section">custom-section</h3>
+<p>add custom sections to the <code>sections.custom</code> array within the configuration file.</p>
+<h3 id="comment-summary-section">comment-summary-section</h3>
+<p>Summarize all comment at the current issue, make progress report etc.</p>
+<p>Occasionally, certain GitHub issues can be overwhelming with an abundance of comments, making it difficult to comprehend the situation. To address this, I have developed a comment summary feature.</p>
+<h2 id="debug-mode">debug mode</h2>
+<p>If you turn on debug mode, it will do the following: resolve prompts, give you more detailed logs of what’s happening, and not create comment.. To enable this, set the <code>debug-mode</code> input to <code>true</code>.</p>
+<p>If you want to test an action without making changes to any issues, it’s useful to turn on debug mode. This will allow you to view the logs and see what comment would be created if debug mode was turned off. Once you’re satisfied with the results, you can turn off debug mode.</p>
+<h2 id="action-example">Action example:</h2>
+<p>This action will trigger when new issue is opened,
+and creates a comment including: related-issues-section, summary-section, label-section, custom-section</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #7EE787">name</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">Improve issues</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79C0FF">on</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">issues</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #7EE787">types</span><span style="color: #C9D1D9">: [</span><span style="color: #A5D6FF">opened</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7EE787">jobs</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">gpt-comment</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #7EE787">runs-on</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">ubuntu-latest</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #7EE787">steps</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">      - </span><span style="color: #7EE787">uses</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">actions/checkout@v3</span></span>
+<span class="line"><span style="color: #C9D1D9">      - </span><span style="color: #7EE787">name</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">Create useful comment with AI</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #7EE787">uses</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">MaurerKrisztian/issue-improver-action@latest</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #7EE787">with</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">openai-key</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">${{ secrets.GPT_KEY }}</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">max-tokens</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">400</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">add-related-issues-section</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">true</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">add-summary-section</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">true</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">add-label-section</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">true</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">add-custom-section</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"my_custom_section1,my_custom_section2"</span></span></code></pre>
+<h2 id="comment-summary">Comment Summary</h2>
+<p>The YAML code below demonstrates how to activate comment summary, progress report, using the “!summarize” command.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">on</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">issue_comment</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7EE787">jobs</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">comment-summary</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #7EE787">runs-on</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">ubuntu-latest</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #7EE787">steps</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">      - </span><span style="color: #7EE787">uses</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">actions/checkout@v3</span></span>
+<span class="line"><span style="color: #C9D1D9">      - </span><span style="color: #7EE787">name</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">Comment summary</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #7EE787">uses</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">MaurerKrisztian/issue-improver-action@latest</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #7EE787">if</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">contains(github.event.comment.body, '!summarize')</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #7EE787">with</span><span style="color: #C9D1D9">:</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">openai-key</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">${{ secrets.GPT_KEY }}</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">max-tokens</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">400</span></span>
+<span class="line"><span style="color: #C9D1D9">          </span><span style="color: #7EE787">add-comment-summary-section</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">true</span></span></code></pre>
+<h2 id="custom-section-1">Custom section:</h2>
+<p>All section prompts is fully customisable.
+To create custom sections / prompts, simply create a JSON file (location is the <code>config-file</code> input) and modify the prompts and section titles as desired. This will owerwite the default config (see: <code>src/config/default-config.ts</code>).</p>
+<p>Additionally, you can add new custom sections to the <code>sections.custom</code> array within the configuration file.</p>
+<h4 id="example-config">Example config:</h4>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">"sections"</span><span style="color: #C9D1D9">: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">"custom"</span><span style="color: #C9D1D9">: [</span></span>
+<span class="line"><span style="color: #C9D1D9">      {</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">"title"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Joke"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">"prompt"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"make a joke about this: {{issueTitle}}"</span></span>
+<span class="line"><span style="color: #C9D1D9">      },</span></span>
+<span class="line"><span style="color: #C9D1D9">      {</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">"title"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Poem"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">"prompt"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Write a short poem about this: {{issueTitle}}"</span></span>
+<span class="line"><span style="color: #C9D1D9">      }</span></span>
+<span class="line"><span style="color: #C9D1D9">    ],</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">"relatedIssues"</span><span style="color: #C9D1D9">: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"title"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Related Issues"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"prompt"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"From the list of open issues: {{openIssues}}, identify the most relevant ones related to '{{issueTitle}}' and provide a brief description of their similarities. Just the very simmilar related issues to '{{issueTitle}}' shoud be included in the answer, if none is very similar, andwer with 'none',"</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">"summary"</span><span style="color: #C9D1D9">: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"title"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Summary"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"prompt"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Provide a concise summary of the main points and objectives presented in the issue '{{issueTitle}}' and its content: {{issueBody}}."</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">"commentSummary"</span><span style="color: #C9D1D9">: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"title"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Comment summary"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"prompt"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Review the comments in {{issueComments}} for the issue '{{issueTitle}}' and its content: {{issueBody}}. Extract the key takeaways, notable updates, and any consensus reached, and provide a concise summary of the discussion."</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">"labelSuggestion"</span><span style="color: #C9D1D9">: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"title"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Label Suggestion"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #79C0FF">"prompt"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"Analyze the issue '{{issueTitle}}' and its content: {{issueBody}}, and suggest appropriate labels from the available labels {{allLabels}} that accurately represent the topic, scope, and complexity of the issue. The response shoud only include a label and why its suitable."</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<h2 id="available-placeholders">Available placeholders:</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code>{{issueTitle}}</code></td><td>The issue title</td></tr><tr><td><code>{{issueBody}}</code></td><td>The issue body</td></tr><tr><td><code>{{issueComments}}</code></td><td>All issue comment</td></tr><tr><td><code>{{issueAuthor}}</code></td><td>Issue creator</td></tr><tr><td><code>{{allLabels}}</code></td><td>All available labels in the repository</td></tr><tr><td><code>{{openIssues}}</code></td><td>All open issues in the repository</td></tr></tbody></table>
+<p>If you need a different placeholder, open an issue.</p>
+<h2 id="demo">Demo:</h2>
+<p><img src="https://user-images.githubusercontent.com/48491140/236701094-1d46c2bc-1d6c-4335-a0b9-27daf0688841.png" alt="Unable to submit form on mobile devices"></p></div>
+		</div>
+		<footer class="tac mt6 astro-FNBAIWJC">
+			<a href="/projects" class="astro-FNBAIWJC">
+				<span class="_button_1fbb5_1">View More</span>
+			</a>
+		</footer>
+		<footer class="_footer_knfx6_1">© 2023 Maurer Krisztián<small class="_byline_knfx6_9">🚀 Built by Astro</small></footer>
+	</body></html>
