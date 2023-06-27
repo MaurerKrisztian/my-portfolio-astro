@@ -19,9 +19,9 @@ function Nav() {
 			<a className={Styles.link} href="/blog">
 				Blog
 			</a>
-			<a className={Styles.link} href="/book-review">
-				Books
-			</a>
+			{/*<a className={Styles.link} href="/book-review">*/}
+			{/*	Books*/}
+			{/*</a>*/}
 			<a className={Styles.link} href="/contact">
 				Contact me
 			</a>
